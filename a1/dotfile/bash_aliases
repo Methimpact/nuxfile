@@ -1,0 +1,60 @@
+#export PATH="$HOME/.linuxbrew/bin:$PATH"
+#export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+#export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+##############################
+export SLS_OPTIONS='--color=auto -a'
+eval "`dircolors`"
+alias dttd="date +%y%m%d_%H%M"
+alias rawless="ls --color=never"
+alias lss="ls $SLS_OPTIONS "
+alias lsl="ls $SLS_OPTIONS -l"
+alias lsttyusb="ls $SLS_OPTIONS /dev/ttyUSB*"
+alias lsaltr="ls -altrh $SLS_OPTIONS"
+alias lsk2="ls -altgrh $SLS_OPTIONS"
+
+alias lssceen="screen -ls"
+alias lsdpkg="sudo dpkg -l"
+alias grpkg="sudo dpkg -l | grep $1 "
+alias mkcdlsr="mkdir -p $1 ; cd $1 | ls "
+alias cdls="cd $1 ; ls"
+alias mkcd="mkdir $1 ; cd $1 "
+alias pkggrp="dpkg -l | grep $1"
+alias grepcat="cat $1 | grep $2"
+alias strgrp="strings $1 | grep $2"
+alias stringsngrep="strings $1 | grep $2"
+
+alias psgrp="ps auxw | grep $1"
+alias psgpy="ps auxw | grep py"
+
+alias spr="sudo"
+alias agd="sudo apt-get update"
+alias agg="sudo apt-get upgrade"
+alias acs="sudo apt-cache search $1"
+alias agi="sudo apt-get install $1"
+
+alias gsettgrp="gsettings list-recursively | grep $1 "
+alias setgsett="gsettings set $1 "
+alias gsettset="gsettings set $1 "
+
+alias diservnrcd='service $1 stop ; update-rc.d $1 disable'
+#alias retart="sudo service $1 restart"
+alias retart="sudo bash /etc/init.d/$1 restart"
+alias tarton="sudo bash /etc/init.d/$1 start"
+alias tartoff="sudo bash /etc/init.d/$1 stop"
+alias istartd="sudo bash /etc/init.d/$1 status"
+
+alias lsk3="lsk2 | grep drw"
+alias lsb="ls -algtrh"
+
+
+alias yudl="youtube-dl -F \"$1\" ; read -p \"Please enter the desired quality #\" FORMAT ; youtube-dl -f $FORMAT \"$1\""
+
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+
